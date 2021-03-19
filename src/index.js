@@ -1,6 +1,6 @@
-import './styles/main.scss'
+import './styles/main.scss';
 
-console.log('entry point')
+console.log('entry point');
 
 function sum(a,b) {
   return a + b;
