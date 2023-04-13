@@ -1,4 +1,7 @@
 const fs = require('fs');
+// https://github.com/taniarascia/webpack-boilerplate/
+
+// https://github.com/icebob/fakerator
 
 const data = [{
     id: 1,
@@ -19,5 +22,5 @@ const dbData = JSON.parse(fs.readFileSync('data.json', (err, data) => (data)));
 fs.writeFileSync('data.json', JSON.stringify([...dbData, ...data]));
 
 // читаем файл
-const text = fs.readFileSync('data.json', 'utf8');
-console.log(JSON.parse(text));
+// const text = fs.readFileSync('data.json', 'utf8');
+// console.log(JSON.parse(text));
