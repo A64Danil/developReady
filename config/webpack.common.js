@@ -8,13 +8,15 @@ const paths = require('./paths')
 
 module.exports = {
     entry: {
-        // main: path.resolve(__dirname, './src/index.js'),
-        main: [`${paths.src  }/index.js`],
+        main: [`${paths.src  }/index.ts`],
     },
     output: {
         path: paths.build,
         filename: '[name].bundle.js',
         publicPath: '/', // добавлено
+    },
+    resolve: {
+        extensions: ['.js', '.ts'],
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -55,6 +57,16 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: ['babel-loader'],
+            },
+            {
+                test: /\.ts$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-typescript'],
+                    },
+                },
             },
             // изображения
             {

@@ -1,6 +1,7 @@
 import './styles/main.scss'
+import './ts/scripts'
 
-console.log('entry point 223')
+console.log('entry point - 10-05-2023')
 
 // создание свойства класса без конструктора
 // eslint-disable-next-line no-unused-vars
